@@ -72,6 +72,52 @@ h1{font-size:clamp(2.35rem,11vw,3.4rem)}
 .project.video-project .video-stage{padding:18px 12px;min-height:0}
 .project.video-project .gameplay-frame{max-width:220px;max-height:390px}
 }
+</style><style>
+/* Final media layout: make card height follow content, never fill a large empty image box */
+.project.video-project{
+ display:grid!important;
+ grid-template-columns:250px minmax(0,1fr)!important;
+ align-items:center!important;
+ min-height:0!important;
+ height:auto!important;
+}
+.project.video-project>.image.video-stage{
+ display:flex!important;
+ justify-content:center!important;
+ align-items:center!important;
+ min-height:0!important;
+ max-height:none!important;
+ height:auto!important;
+ padding:20px!important;
+ margin:0!important;
+ background:#0c1721!important;
+ align-self:stretch!important;
+}
+.project.video-project video.gameplay-frame{
+ display:block!important;
+ width:210px!important;
+ max-width:100%!important;
+ height:375px!important;
+ max-height:none!important;
+ min-height:0!important;
+ aspect-ratio:auto!important;
+ object-fit:contain!important;
+ border:0!important;
+ border-radius:12px!important;
+ background:#000!important;
+}
+.project.video-project>.body{
+ align-self:center!important;
+ padding:26px 32px!important;
+}
+.project.video-project .tech-detail{margin:12px 0!important;padding:9px 0 9px 14px!important}
+.project.video-project .body p{margin-bottom:10px!important}
+@media(max-width:700px){
+ .project.video-project{grid-template-columns:1fr!important}
+ .project.video-project>.image.video-stage{padding:16px!important}
+ .project.video-project video.gameplay-frame{height:340px!important;width:191px!important}
+ .project.video-project>.body{padding:24px!important}
+}
 </style></head>
 <body>
 <header><div class="container"><nav><a class="brand" href="#top">Liani Ovalles</a><div class="links"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#testing">Testing</a><a download="" href="Liani_Ovalles_Resume.pdf">Resume</a><a href="#contact">Contact</a></div></nav></div></header>
@@ -80,8 +126,8 @@ h1{font-size:clamp(2.35rem,11vw,3.4rem)}
 <section id="projects"><div class="container"><div class="eyebrow">Selected work</div><h2>Built, tested, and shipped.</h2><p class="section-intro">Four examples of hands-on development: multiplayer gameplay systems built with Unity visual scripting, plus mobile projects made in Unity with C#. Each project highlights implementation, testing, and iteration.</p><div class="projects">
 <article class="project"><div class="image"><img alt="Gameplay screenshots from How Far Can You Ramp?" loading="lazy" src="https://gentle-tapioca-be9b6f.netlify.app/assets/b6f2767bb4b3dfc897111e20.jpg"/></div><div class="body"><div class="meta">Unity | Visual scripting | Multiplayer game</div><h3>How Far Can You Ramp?</h3><p class="result">906K+ visits</p><p>A driving and progression game where players travel farther, earn rewards and upgrade their vehicles. I built the progression systems and adjusted the player spawn area after finding an issue during gameplay.</p><p class="fine">Gameplay logic, progression, testing, iteration</p></div></article>
 <article class="project"><div class="image"><img alt="Gameplay screenshot from Big Hands" loading="lazy" src="https://gentle-tapioca-be9b6f.netlify.app/assets/081a49a530ebfb4fcb7cc245.jpg"/></div><div class="body"><div class="meta">Unity | Visual scripting | Multiplayer game | Team project</div><h3>Big Hands</h3><p class="result">840K+ visits</p><p>A multiplayer experience built around different interactions for VR and non-VR players. I worked on grabbing, escaping and respawn behavior, then refined the timing of those systems using player feedback.</p><p class="fine">Player interactions, multiplayer logic, debugging</p></div></article>
-<article class="project video-project"><div class="image video-stage"><video class="gameplay-frame" controls playsinline preload="metadata" aria-label="Sticker Puzzles gameplay"><source src="sticker-puzzles-gameplay.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div><div class="body"><div class="meta">Unity | iOS | Published game</div><h3>Sticker Puzzles: Match Scenes</h3><p class="result">Released on the App Store</p><p>A mobile puzzle game I built and published using Unity. After playtesting showed that sticker placement could feel imprecise, I improved the interaction by adding snapping behavior.</p><p class="fine">Mobile development, usability testing, release</p><p class="tech-detail"><strong>Engineering focus:</strong> Unity sticker selection and placement, target matching, puzzle completion, and hints. Playtesting exposed a precision problem, so I changed the interaction to snap stickers into their target positions. <em>The footage shows the earlier version.</em></p><a class="footage-link" href="https://gentle-tapioca-be9b6f.netlify.app/sticker-puzzles-case-study" rel="noopener noreferrer" target="_blank">Read original Sticker Puzzles case study ↗</a></div></article>
-<article class="project video-project"><div class="image video-stage"><video class="gameplay-frame" controls playsinline preload="metadata" aria-label="Sugar.io gameplay"><source src="sugar-io-gameplay.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div><div class="body"><div class="meta">Unity | C# | Android prototype</div><h3>Sugar.io</h3><p class="result">Playable prototype</p><p>A mobile game prototype featuring touch controls, item collection, character growth and computer-controlled opponents. I programmed the core mechanics in C# and tested how they worked together during gameplay.</p><p class="fine">C# programming, gameplay systems, prototyping</p><p class="tech-detail"><strong>Engineering focus:</strong> C# touch movement, collision rules that depend on relative size, object absorption, player growth, visual feedback, and computer-controlled opponents. I tested and adjusted movement and growth thresholds in the Android prototype. <em>Prototype, not a released game.</em></p><a class="footage-link" href="https://gentle-tapioca-be9b6f.netlify.app/sugar-io-case-study" rel="noopener noreferrer" target="_blank">Read original Sugar.io case study ↗</a></div></article>
+<article class="project video-project"><div class="image video-stage"><video class="gameplay-frame" controls playsinline preload="metadata" aria-label="Sticker Puzzles gameplay"><source src="sticker-puzzles-gameplay.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div><div class="body"><div class="meta">Unity | iOS | Published game</div><h3>Sticker Puzzles: Match Scenes</h3><p class="result">Released on the App Store</p><p>A mobile puzzle game I built and published using Unity. After playtesting showed that sticker placement could feel imprecise, I improved the interaction by adding snapping behavior.</p><p class="fine">Mobile development, usability testing, release</p><p class="tech-detail"><strong>Engineering focus:</strong> Unity sticker selection and placement, target matching, puzzle completion, and hints. Playtesting exposed a precision problem, so I changed the interaction to snap stickers into their target positions. <em>The footage shows the earlier version.</em></p><a class="footage-link" href="sticker-puzzles-gameplay.mp4" target="_blank" rel="noopener">Open gameplay video ↗</a></div></article>
+<article class="project video-project"><div class="image video-stage"><video class="gameplay-frame" controls playsinline preload="metadata" aria-label="Sugar.io gameplay"><source src="sugar-io-gameplay.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div><div class="body"><div class="meta">Unity | C# | Android prototype</div><h3>Sugar.io</h3><p class="result">Playable prototype</p><p>A mobile game prototype featuring touch controls, item collection, character growth and computer-controlled opponents. I programmed the core mechanics in C# and tested how they worked together during gameplay.</p><p class="fine">C# programming, gameplay systems, prototyping</p><p class="tech-detail"><strong>Engineering focus:</strong> C# touch movement, collision rules that depend on relative size, object absorption, player growth, visual feedback, and computer-controlled opponents. I tested and adjusted movement and growth thresholds in the Android prototype. <em>Prototype, not a released game.</em></p><a class="footage-link" href="sugar-io-gameplay.mp4" target="_blank" rel="noopener">Open gameplay video ↗</a></div></article>
 </div></div></section>
 <section id="skills"><div class="container split"><div><div class="eyebrow">Capabilities</div><h2>Tools and skills</h2><p class="section-intro">Most of my experience comes from building games, testing features and figuring out how to fix problems as they come up.</p><div class="skill-list"><span>Unity</span><span>C#</span><span>Visual scripting</span><span>Game logic</span><span>Debugging</span><span>Manual testing and bug reports</span><span>Mobile development</span><span>PC, Mac &amp; iOS</span><span>Test cases</span><span>GitHub</span><span>Excel and Google Sheets</span></div></div><div><h3>How I work</h3><ul class="approach"><li><strong>Build and test.</strong> I check new features as I develop them and look for behavior that doesn't match the design.</li><li><strong>Track down issues.</strong> I try to reproduce a problem, understand what triggers it and verify that a change fixes it.</li><li><strong>Learn what the project needs.</strong> I'm comfortable picking up unfamiliar tools and finding solutions through experimentation and documentation.</li><li><strong>Improve after release.</strong> Player feedback helps me identify confusing interactions and decide what to adjust.</li></ul></div></div></section>
 <section id="testing"><div class="container"><div class="eyebrow">Quality assurance</div><h2>Testing and bug documentation</h2><p class="section-intro">I test features while developing games and document issues so they can be reproduced and fixed. I also use GitHub and spreadsheets to organize project work.</p><div class="qa-grid"><article class="sample"><div class="meta">Bug report example from project work</div><h3>Player spawn area issue</h3><p><strong>Project:</strong> How Far Can You Ramp?</p><p><strong>Issue:</strong> I found a problem with the player spawn area while testing gameplay.</p><p><strong>How I investigated:</strong> I checked the spawn behavior in-game and adjusted the spawn area.</p><p><strong>Resolution:</strong> Updated the spawn area to address the issue.</p><p class="fine">This is a short retrospective summary of an issue from my project, not the original issue tracker entry. Exact reproduction steps and device details are not available here.</p></article><article class="sample"><div class="meta">Test case example</div><h3>Sticker placement and snapping</h3><p><strong>Project:</strong> Sticker Puzzles: Match Scenes</p><p><strong>Purpose:</strong> Check whether stickers snap into the intended position.</p><p><strong>Test steps:</strong></p><ol><li>Open a puzzle with draggable stickers.</li><li>Drag a sticker toward its matching position.</li><li>Release it near the correct placement area.</li><li>Repeat with different release positions.</li></ol><p><strong>Expected:</strong> A correctly placed sticker snaps into position.</p><p><strong>What I worked on:</strong> I improved sticker placement by adding snapping behavior after playtesting revealed that placement could feel imprecise.</p><p class="fine">Example test case based on a feature I developed. It is not a record of a formal test run.</p></article></div></div></section>
