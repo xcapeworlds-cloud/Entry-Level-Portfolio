@@ -1,0 +1,27 @@
+BUG REPORT EXAMPLE
+Project: How Far Can You Ramp? (Rec Room multiplayer)
+Title: Launched vehicles sometimes fail to return to spawn
+Type: Gameplay / multiplayer
+Status: Resolved in project testing
+Source: Retrospective documentation of a real issue I investigated
+
+SUMMARY
+During multiplayer sessions, some launched vehicles did not return to their spawn locations, leaving fewer vehicles available for players starting another run.
+
+EXPECTED RESULT
+Vehicles no longer in use should return to spawn. Vehicles still occupied by a player should not be reset during an active run.
+
+ACTUAL RESULT
+Some vehicles remained away from spawn after launch instead of returning.
+
+CONTEXT
+Observed in multiplayer play. Exact build, device, frequency, original root cause, and reproduction steps were not recorded.
+
+FIX IMPLEMENTED
+I built automatic vehicle recovery logic using Rec Room visual scripting. The system checked vehicles in a trigger volume and whether a player was seated. Unoccupied vehicles were returned to spawn; occupied vehicles were left alone. The precise check interval was not documented.
+
+VERIFICATION
+I tested the logic while other players were active in a server, then copied the working logic into the main game server. During hours of later multiplayer play, I did not observe the missing vehicle issue recur.
+
+DOCUMENTATION NOTE
+Written retrospectively for my portfolio. This is not an original issue tracker entry. No measured failure rate or formal test run is claimed.
