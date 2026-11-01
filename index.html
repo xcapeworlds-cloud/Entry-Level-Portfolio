@@ -60,6 +60,18 @@ h1{font-size:clamp(2.35rem,11vw,3.4rem)}
 .stats .stat:last-child{grid-column:1/-1}
 .video-stage .gameplay-frame{max-height:440px;max-width:205px}
 }
+</style>
+<style>
+/* Compact portrait-video cards: no half-width empty video frame */
+.project.video-project{grid-template-columns:300px minmax(0,1fr);min-height:0;align-items:stretch}
+.project.video-project .video-stage{min-height:0;padding:22px 20px;background:#0a1420}
+.project.video-project .gameplay-frame{width:100%;max-width:235px;height:auto;aspect-ratio:9/16;max-height:430px;object-fit:contain;border:0;border-radius:13px;box-shadow:0 10px 32px rgba(0,0,0,.3)}
+.project.video-project .body{align-self:center}
+@media(max-width:760px){
+.project.video-project{grid-template-columns:1fr}
+.project.video-project .video-stage{padding:18px 12px;min-height:0}
+.project.video-project .gameplay-frame{max-width:220px;max-height:390px}
+}
 </style></head>
 <body>
 <header><div class="container"><nav><a class="brand" href="#top">Liani Ovalles</a><div class="links"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#testing">Testing</a><a download="" href="Liani_Ovalles_Resume.pdf">Resume</a><a href="#contact">Contact</a></div></nav></div></header>
