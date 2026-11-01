@@ -1,0 +1,32 @@
+MANUAL TEST CASE EXAMPLE
+Project: Sticker Puzzles: Match Scenes (Unity iOS)
+Feature: Sticker snapping near matching target
+Type: Illustrative functional test case
+Documentation note: Designed from a feature I built; not a recorded formal test execution.
+
+TEST OBJECTIVE
+Verify that a sticker placed near its correct target snaps into the intended position.
+
+PRECONDITIONS
+A playable puzzle scene is open and contains at least one draggable sticker and its matching target.
+
+TEST STEPS
+1. Open a puzzle containing draggable stickers.
+2. Select an available sticker.
+3. Drag it toward its matching target.
+4. Release it close to the target.
+5. Repeat using different nearby release positions.
+
+EXPECTED RESULT
+When the sticker is placed within the intended matching area, it snaps to the correct target position.
+
+ADDITIONAL CHECKS TO CONSIDER
+- Release the sticker farther from its target and observe whether incorrect placement is rejected.
+- Try a different sticker and target.
+- Check that completing all required placements advances or completes the puzzle as designed.
+
+BACKGROUND
+Playtesting revealed that precise manual sticker placement was frustrating, so I improved the snapping behavior. The portfolio gameplay recording predates that improvement.
+
+RESULT
+Not recorded. This document is a test case example, not a claim of completed test execution.
